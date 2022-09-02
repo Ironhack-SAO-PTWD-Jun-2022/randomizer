@@ -1,13 +1,26 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-
-
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello, Ironhackers!</h1>
-      <p>base project for the randomizer</p>
+      <Routes>
+        <div>
+          <Route path="/" element={<Navbar />} />
+        </div>
+
+        <div>
+          <div>
+            <Route path="/Sidebar" element={<Sidebar />} />
+          </div>
+          <div>
+            <Route path="/Container" element={<Container />} />
+          </div>
+        </div>
+        <div>
+          <Route path="/Footer" element={<Footer />} />
+        </div>
+      </Routes>
     </div>
   );
 }
