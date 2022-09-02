@@ -1,34 +1,23 @@
 import "./App.css";
 import Sidebar from "./components/Sidebar";
-
-const testInfo = [
-  {
-    _id: "6311392ee0e8fd00178245b8",
-    name: "Cohort 78",
-    students: [
-      "Caio",
-      "Gabriel",
-      "Hélio",
-      "Hugo",
-      "Jandson",
-      "João",
-      "Renata",
-      "Walison",
-    ],
-  },
-  {
-    _id: "63113976e0e8fd00178245b9",
-    name: "Pets",
-    students: ["José", "Joaquim", "Nina", "Apollo", "Spike", "Merlin"],
-  },
-];
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [cohort, setCohort] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://ironrest.herokuapp.com/randomizer78")
+      .then((response) => setCohort(response.data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div className="App">
       <h1>Hello, Ironhackers!</h1>
       <p>base project for the randomizer</p>
-      <Sidebar cohortArr={testInfo} />
+      <Sidebar cohortArr={cohort} />
     </div>
   );
 }
