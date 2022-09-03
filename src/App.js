@@ -1,7 +1,20 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
+import { Route, Routes } from "react-router-dom";
 
 function App() {
+  const [cohorts, setCohorts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://ironrest.herokuapp.com/randomizer78")
+      .then((response) => setCohorts(response.data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div className="App">
       <div>
@@ -10,7 +23,7 @@ function App() {
 
       <div>
         <div>
-          <Sidebar />
+        <Sidebar cohortArr={cohorts} />
         </div>
 
         <Routes>
