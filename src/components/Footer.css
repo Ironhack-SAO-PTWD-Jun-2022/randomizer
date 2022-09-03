@@ -1,0 +1,27 @@
+.footer {
+  background-color: rgb(47, 47, 47);
+  padding: 10px 12px;
+  color: white;
+  margin-bottom: 5px;
+  left: 45%;
+  justify-content: center;
+}
+
+.footer p{
+    margin: 0;
+}
+
+.descricao {
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+
+.footer h3 {
+  color: white;
+  padding: 5px 5px;
+  font-size: 1rem;
+}
+
+.footer h3:hover {
+  color: yellow;
+}
