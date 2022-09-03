@@ -1,4 +1,4 @@
-import "../styles/sidebar.css";
+import "./Sidebar.css";
 
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const Sidebar = (props) => {
       <div className="cohort-container">
         {props.cohortArr.map((cohort) => {
           return (
-            <Link to={`/:${cohort._id}`} key={cohort._id} className="cohort">
+            <Link to={`/${cohort._id}`} key={cohort._id} className="cohort">
               <p>{cohort.name}</p>
             </Link>
           );

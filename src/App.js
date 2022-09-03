@@ -1,15 +1,17 @@
 import "./App.css";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar/Sidebar";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import CohortPage from "./pages/CohortPage";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [cohort, setCohort] = useState([]);
+  const [cohorts, setCohorts] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://ironrest.herokuapp.com/randomizer78")
-      .then((response) => setCohort(response.data))
+      .then((response) => setCohorts(response.data))
       .catch((error) => console.log(error));
   }, []);
 
@@ -17,7 +19,13 @@ function App() {
     <div className="App">
       <h1>Hello, Ironhackers!</h1>
       <p>base project for the randomizer</p>
-      <Sidebar cohortArr={cohort} />
+      <Sidebar cohortArr={cohorts} />
+      <Routes>
+        <Route
+          path="/:cohortId/*"
+          element={<CohortPage cohortArr={cohorts} />}
+        ></Route>
+      </Routes>
     </div>
   );
 }
