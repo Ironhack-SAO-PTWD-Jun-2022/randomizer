@@ -2,7 +2,7 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import Navbar from './components/Navbar'
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 
@@ -18,11 +18,28 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello, Ironhackers!</h1>
-      <p>base project for the randomizer</p>
-      <Sidebar cohortArr={cohorts} />
-      <Routes></Routes>
+      <div className="app-navbar">
+        <Navbar />
+      </div>
+
+      <div className="app-mid">
+        <div className="app-sidebar">
+        <Sidebar cohortArr={cohorts} />
+        </div>
+
+        <div className="app-container">
+        <Routes>
+         
+            <Route path="/" element={<div>Home</div>} />
+            <Route path="/:cohortId" element={<div>Turma especifica</div>} />
+            <Route path="/add-cohort" element={<div>Add cohort</div>} />
+            <Route path="/edit/:cohortId" element={<div>Edit cohort</div>} />
+        </Routes>
+          </div>
+      </div>
+      <div className="app-footer">
       <Footer />
+      </div>
     </div>
 
 
