@@ -4,23 +4,27 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Routes>
+      <div>
+        <Navbar />
+      </div>
+
+      <div>
         <div>
-          <Route path="/" element={<Navbar />} />
+          <Sidebar />
         </div>
 
-        <div>
+        <Routes>
           <div>
-            <Route path="/Sidebar" element={<Sidebar />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/:cohortId" element={<Turma />} />
+            <Route path="/add-cohort" element={<AddTurma />} />
+            <Route path="/edit/:cohortId" element={<EditTurma />} />
           </div>
-          <div>
-            <Route path="/Container" element={<Container />} />
-          </div>
-        </div>
-        <div>
-          <Route path="/Footer" element={<Footer />} />
-        </div>
-      </Routes>
+        </Routes>
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
