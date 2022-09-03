@@ -2,7 +2,7 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import Navbar from './components/Navbar'
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -26,17 +26,18 @@ function App() {
         <Sidebar cohortArr={cohorts} />
         </div>
 
+        <div>
         <Routes>
-          <div>
-            <Route path="/" element={<Home />} />
-            <Route path="/:cohortId" element={<Turma />} />
-            <Route path="/add-cohort" element={<AddTurma />} />
-            <Route path="/edit/:cohortId" element={<EditTurma />} />
-          </div>
+         
+            <Route path="/" element={<div>Home</div>} />
+            <Route path="/:cohortId" element={<div>Turma especifica</div>} />
+            <Route path="/add-cohort" element={<div>Add cohort</div>} />
+            <Route path="/edit/:cohortId" element={<div>Edit cohort</div>} />
         </Routes>
+          </div>
       </div>
       <div>
-        <Footer />
+        Footer
       </div>
     </div>
   );
