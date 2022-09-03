@@ -17,16 +17,16 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className="app-navbar">
         <Navbar />
       </div>
 
-      <div>
-        <div>
+      <div className="app-mid">
+        <div className="app-sidebar">
         <Sidebar cohortArr={cohorts} />
         </div>
 
-        <div>
+        <div className="app-container">
         <Routes>
          
             <Route path="/" element={<div>Home</div>} />
@@ -36,7 +36,7 @@ function App() {
         </Routes>
           </div>
       </div>
-      <div>
+      <div className="app-footer">
         Footer
       </div>
     </div>

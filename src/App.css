@@ -28,6 +28,32 @@
   color: #61dafb;
 }
 
+
+
+.app-navbar {
+
+}
+
+.app-mid {
+  display: flex;
+  
+}
+
+.app-sidebar {
+  border: 1px solid red;
+ 
+
+}
+
+.app-container {
+  margin-left: 100px;
+  border: 1px solid green
+
+}
+
+.app-footer {
+
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
