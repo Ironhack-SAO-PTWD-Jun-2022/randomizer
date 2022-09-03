@@ -1,27 +1,38 @@
-import './RandomList.css'
+import "./RandomList.css";
 
-function RandomList() {
-    const StudentsArr = ["aluno1", "aluno2", "aluno3"];
+function RandomList({ students }) {
 
-let randomIndex = Math.floor(Math.random() * StudentsArr.length);
+console.log('students', students)
 
-const randomList = () => {
-    for (let i = 0; i < StudentsArr.length; i++) {
-        return (
-        <div>
-            <ol>
-                <li>{StudentsArr[randomIndex]}</li>
-            </ol>
-        </div>
-        ) 
+if(!students) return <p>Não há estudantes!</p>
+
+
+
+const random = () => {
+    let newArr = [];
+    const studentsCopy = [...students];
+    
+    for (let i = 0; i < students.length; i++) {
+        let randomIndex = Math.floor(Math.random() * studentsCopy.length);
+        let randomStudent = studentsCopy.splice(randomIndex, 1)[0]
+        newArr.push(randomStudent)
     }
-}
+        return newArr;
+    }
 
-    return (
+  let newOrderArr = random(); 
+
+  console.log('newOrderArr', newOrderArr)
+
+  return (
     <div className="random-list">
-        <h1>Ordem Aleatória</h1>
-        {randomList()}
+      <h1>Ordem Aleatória</h1>
+      <ol>
+        {newOrderArr.map((student, index) => {
+          return <li key={index}>{student}</li>;
+        })}
+      </ol>
     </div>
-    );
+  );
 }
 export default RandomList;
