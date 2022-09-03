@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Navbar from './components/Navbar'
 import { Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   const [cohorts, setCohorts] = useState([]);
@@ -37,9 +38,11 @@ function App() {
           </div>
       </div>
       <div className="app-footer">
-        Footer
+      <Footer />
       </div>
     </div>
+
+
   );
 }
 
