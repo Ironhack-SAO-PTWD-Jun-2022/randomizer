@@ -1,5 +1,5 @@
 import "./App.css";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Sidebar from "./components/Sidebar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CohortPage from "./pages/CohortPage";
