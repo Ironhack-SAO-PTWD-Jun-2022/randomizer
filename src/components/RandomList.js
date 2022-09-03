@@ -2,11 +2,7 @@ import "./RandomList.css";
 
 function RandomList({ students }) {
 
-console.log('students', students)
-
 if(!students) return <p>Não há estudantes!</p>
-
-
 
 const random = () => {
     let newArr = [];
@@ -21,8 +17,6 @@ const random = () => {
     }
 
   let newOrderArr = random(); 
-
-  console.log('newOrderArr', newOrderArr)
 
   return (
     <div className="random-list">
