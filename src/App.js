@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import { Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   const [cohorts, setCohorts] = useState([]);
@@ -21,7 +22,10 @@ function App() {
       <p>base project for the randomizer</p>
       <Sidebar cohortArr={cohorts} />
       <Routes></Routes>
+      <Footer />
     </div>
+
+
   );
 }
 
