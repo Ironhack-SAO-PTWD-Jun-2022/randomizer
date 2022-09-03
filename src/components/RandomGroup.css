@@ -1,0 +1,28 @@
+.random-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    margin: auto;
+}
+
+.random-group h3 {
+    /* font-weight: lighter; */
+    margin: 0;
+    padding: 0;
+}
+
+.random-group ol {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    border: 1px solid black;
+    width: 280px;
+    padding: 30px;
+    margin: 0;
+    font-size: 30px;
+}
+
+.list {
+    width: 20%;
+}
